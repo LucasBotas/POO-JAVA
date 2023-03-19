@@ -1,0 +1,315 @@
+Algoritmo
+inicio
+	inteiro opcao
+	caracter sair
+
+	faca
+		escreva("Digite [1] para formas geométricas ou [2] para equação")
+		leia(opcao)
+		
+		se (opcao == 1) entao
+			escreva("Opção 1 selecionada.")
+			escreva("1 - Cilindro" + "2 - Cone" + "3 - Paralelepípedo" + "4 - Quadrado" + "5 - Triângulo"+"Escolha a forma geométrica")
+
+			escolha(opcao)
+				caso 1: 
+				Cilindro.solicitaDados()
+				Cilindro.imprimeDados()
+
+				caso 2:
+				Cone.solicitaDados()
+				Cone.imprimeDados()
+
+				caso 3: 
+				Paralelepipedo.solicitaDados()
+				Paralelepipedo.imprimeDados()
+
+				caso 4:
+				Quadrado.solicitaDados()
+				Quadrado.imprimeDados()
+
+				caso 5: 
+				Triangulo.solicitaDados()
+				Triangulo.imprimeDados()
+
+				se nao
+				escreva("Opção inválida. Tente novamente!")
+			fim_escolha
+		se nao se(opcao == 2)
+			escreva("Opção 2 selecionada")
+			raiz.solicitaDados()
+			raiz.solicitaDados()
+		senao
+			escreva("Opção inválida. Tente novamente!")
+		fim_se
+	
+	
+		escreva("Deseja sair do programa?")
+		leia(sair)
+
+	enquanto(sair != "sim")
+
+
+	Cilindro.toString()
+	Cone.toString()
+	Paralelepipedo.toString()
+	Quadrado.toString()
+	Raiz.toString()
+	Triangulo.toString()
+				
+fim
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+Algoritmo Ponto 
+
+Início
+	real x, y
+	caractere toString()
+	Início
+		caractere texto
+		texto = ""
+		retorna texto
+	fim
+
+	void solicitaDados();
+
+	void imprimeDados();
+
+fim_Algorítmo
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+Algorítmo Cilindro
+Início
+	real x, y
+	real calculaArea()
+	Início
+		retorna (2 * 3.14 * x * (x * y))
+	fim
+
+	void solicitaDados()
+	Início
+	Escreva ("Digite o raio do Cilindro: ")
+	leia(x)
+	Escreva ("Digite a altura do Cilindro: ")
+	leia(y)
+	fim
+
+	caractere toString()
+	Início
+		caractere texto = ("Dados do Cilindro: " + "Raio: "  + x + "Altura: " + y + "Area: " + calculaArea() + "Volume: " + calculaVolume()) 
+		retorna texto
+	fim
+	
+	void imprimeDados()
+	Início
+		Escreva ("Area do Cilindro: " + calculaArea() + "Volume do Cilindro: " + calculaVolume())
+	fim
+
+fim_Algorítmo 
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+Algorítmo Cone
+Início
+	real x, y, geratriz
+	
+	real calculaArea()
+	Início
+	retorna (3.14 * x * (x + geratriz))
+	fim
+
+	real calculaVolume()
+	Início
+		real area 
+		area = calculaArea() 
+		retorna ((3.14 * ((x * x) * area)) /3)
+	fim
+
+	void solicitaDados()
+	Início
+		Escreva ("Digite o Raio do Cone: ")
+		leia(x)
+		Escreva ("Digite a Altura do Cone: ")
+		leia(y)
+		Escreva ("Digite a geratriz do cone: ")
+		leia(geratriz)
+	fim
+
+	caractere toString()
+	Início
+		caractere texto = ("Dados do Cone: " + "Raio: "  + x + "Altura: " + y + "Geratriz: " + geratriz + "Area: " + calculaArea() + "Volume: " + calculaVolume()) 
+		retorna texto
+	fim
+	
+	void imprimeDados()
+	Início
+		Escreva ("Area do Cone: " + calculaArea() + "Volume do Cone: " + calculaVolume())
+		
+	fim
+	
+fim_algoritmo
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+Algoritmo Paralelepipedo
+inicio
+	real x, y, comprimento
+	
+	real calculaArea() 
+	inicio
+		return 2*(x*comprimento+x*y+comprimento*y)
+	fim
+	
+	real calculaVolume()
+	inicio
+		return (comprimento*x*y)
+	fim
+	
+	void solicitaDados()
+	Início
+		Escreva ("Digite o comprimento do Paralelepipedo: ")
+		leia(comprimento)
+		Escreva ("Digite a Altura do Paralelepipedo: ")
+		leia(y)
+		Escreva ("Digite a largura do Paralelepipedo: ")
+		leia(x)
+	fim
+
+	caractere toString()
+	Início
+		caractere texto = ("Dados do Paralelpípedo: " + "Comprimento: " + comprimento + "Altura: " + y + "Largura: "+ x + "Área: " + calculaArea() + "\nVolume: " + calculaVolume()
+		retorna texto
+	fim
+	
+	void imprimeDados()
+	Início
+		Escreva ("Área do paralelepípedo: " + calculaArea() + "Volume do paralelepípedo: " + calculaVolume())
+	fim
+
+fim_algoritmo
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+Algoritmo Quadrado
+inicio
+	real x, y
+
+	real calculaArea() 
+	inicio
+		return x*y
+	fim
+	
+	real calculaPerimetro()
+	inicio
+		return x*4
+	fim
+	
+	void solicitaDados()
+	Início
+		Escreva ("Digite o lado do quadrado: ")
+		leia(y)
+		x = y
+	fim
+
+	caractere toString()
+	Início
+		caractere texto = "Dados do Quadrado: " + "Lado: " + x + "Área: " + calculaArea() + "Perímetro: " + calculaPerimetro()
+		retorna texto
+	fim
+	
+	void imprimeDados()
+	Início
+		Escreva ("Área do quadrado: " + calculaArea() +"Perimetro do quadrado: " + calculaPerimetro())
+	fim
+
+fim_algoritmo
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+Algoritmo Raiz
+inicio
+	inteiro a, b, c
+
+	real calculaDelta() 
+	inicio
+		retorna ((b*b) - 4*a*c)
+	fim
+
+	real calculaX1() 
+	inicio
+		retorna (-(-b) + calculaDelta()) / (2*a)
+	fim
+
+	real calculaX2
+	inicio
+		retorna (-(-b) - calculaDelta()) / (2*a)
+	fim
+
+	void solicitaDados()
+	Início
+		escreva("Digite o valor de A: ")
+		leia(a)
+		escreva("Digite o valor de B: ")
+		leia(b)
+		escreva("Digite o valor de C: ")
+		leia(c)
+	fim
+
+	caractere toString()
+	Início
+		caractere texto = "Dados Bhaskara: "
+        texto += "Equação: "+"Equação: " + a + "x² - " + b + "x + " + c + "Raízes: X1: " + calculaX1() + "X2: " + calculaX2()
+		retorna texto
+	fim
+	
+	void imprimeDados()
+	Início
+		Escreva ( "Equação: " + a + "x² - " + b + "x + " + c + "Raízes: X1: " + calculaX1() + "X2: " + calculaX2())
+	fim
+
+fim_algoritmo
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+Algoritmo Triangulo
+inicio
+	real x, y
+
+	real calculaArea()
+	inicio
+		retorna ((y+y)/x)
+	fim
+	
+	real calculaPerimetro()
+	inicio
+		retorna (y*2+x)
+	fim
+
+	void solicitaDados()
+	Início
+		escreva("Digite a base do triângulo: ")
+		leia(x)
+		escreva("Digite a altura do triângulo: ")
+		leia(y)
+	fim
+
+	caractere toString()
+	Início
+		caractere texto = "Dados do Triângulo: " + "Lado: " + y + "Base: " + x + "Área: " + calculaArea() + "Perímetro: " + calculaPerimetro()
+		retorna texto
+	fim
+	
+	void imprimeDados()
+	Início
+		Escreva ("Area do Triângulo: " + calculaArea() + "Perimetro do Triângulo: " + calculaPerimetro())
+	fim
+
+fim_algoritmo
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+
+
+
